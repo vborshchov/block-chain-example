@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>Simple blockchain example</title>
+
+        <script defer src="js/sha3.min.js"></script>
+        <script defer type="module" src="app.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/styles/monokai_sublime.min.css">
+        <link rel="stylesheet" href="css/styles.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.5/clipboard.min.js"></script>
+    </head>
+    <body>
+        <div class="tutorial">
+            <h1>Open REPL to use simple blockchain example</h1>
+            <p>
+                You can copy and paste this is code into REPL. Please use latest version of Chrome :)
+            </p>
+        
+            <pre>
+                <code id="init" class="code js" data-clipboard-target="#init">
+let genesisBlock = new Block()
+let chain = new Chain(genesisBlock)
+</code>
+                <label>Create genesis block and init Blockchain</label>
+            </pre>
+            <pre>
+                <code id="transactions" class="code js" data-clipboard-target="#transactions">
+chain.addBlock(chain.mineBlock([
+    new Transaction('Ivah','Lera',87377),
+    new Transaction('Crawford','Nathanael',13992)
+]))
+chain.addBlock(chain.mineBlock([new Transaction('Hassie','Earnest',31373)]))
+chain.addBlock(chain.mineBlock([new Transaction('Wilma','Vidal',88783)]))
+chain.addBlock(chain.mineBlock([new Transaction('Stone','Eliseo',4677)]))
+chain.addBlock(chain.mineBlock([new Transaction('Pearline','Paul',83107)]))
+chain.addBlock(chain.mineBlock([new Transaction('Ervin','Jayne',31442)]))
+chain.addBlock(chain.mineBlock([new Transaction('Harmony','Mariam',33166)]))
+</code>
+                <label>Create transactions</label>
+            </pre>
+            <pre>
+                <code id="methods" class="code js" data-clipboard-target="#methods">
+console.log('isOrderValid', chain.isOrderValid())
+var transaction = new Transaction('Ada','Vito',63691)
+var block = chain.mineBlock([transaction])
+console.log('validateBlockHash', chain.validateBlockHash(block))
+console.log('validateFullChainHash', chain.validateFullChainHash())
+</code>
+                <label>Check methods of Chain class</label>
+            </pre>
+            
+        </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+    </body>
+</html>

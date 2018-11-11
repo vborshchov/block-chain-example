@@ -1,0 +1,73 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat);
+@import url(https://fonts.googleapis.com/css?family=PT+Serif:400,400italic);
+#toast-container {
+  font-family: "Montserrat", Arial, sans-serif;
+}
+
+.border-radius, body .tutorial, body .code {
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+}
+
+body {
+  background-color: #f39c12;
+}
+body .tutorial {
+  background-color: #fff;
+  margin: 10vh auto;
+  width: 80vw;
+  max-width: 960px;
+  -webkit-box-shadow: 0px 4px 5px -1px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 4px 5px -1px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 4px 5px -1px rgba(0, 0, 0, 0.75);
+}
+@media (max-width: 50em) {
+  body .tutorial {
+    width: 100vw;
+  }
+}
+body .tutorial h1 {
+  padding-top: 5%;
+  margin: 0 8%;
+  font-family: "Montserrat", Arial, sans-serif;
+}
+body .tutorial h4 {
+  margin: 0 8.2%;
+  font-family: "Montserrat", Arial, sans-serif;
+}
+body .tutorial label {
+  font-family: "PT Serif", serif;
+  font-style: italic;
+  margin-left: 30px;
+}
+body .tutorial p {
+  margin: 3% 8% 1% 8%;
+  font-family: "PT Serif", serif;
+  line-height: 28px;
+  /* font-size: 24px; */
+  text-align: justify;
+}
+body .tutorial p:last-of-type {
+  padding-bottom: 80px;
+}
+body .tutorial p::first-letter {
+  font-family: "Montserrat", Arial, sans-serif;
+  font-size: 54px;
+  float: left;
+  color: #f39c12;
+  line-height: 50px;
+  margin: 0 7px -2px 0;
+}
+body .code {
+  margin: 0 7.5%;
+  padding-left: 40px;
+  font-size: 1.2em;
+  cursor: pointer;
+}
+@media (max-width: 50em) {
+  body .code {
+    margin: 0;
+    padding: 0 7.5%;
+  }
+}
